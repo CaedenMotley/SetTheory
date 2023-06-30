@@ -1,0 +1,18 @@
+"""
+    File: ExecuteSetProcessing.py
+    Author: Caeden Motley
+    Purpose: This program will execute the sub programs in this order
+    [1: CreatingMatrix, 2: SetProperties.......
+
+    The end result of this running will be the file 'MySet' which will
+    contain all of the information pertaining to your given set
+"""
+import subprocess
+
+
+def Execute():
+    # runs the Creating Matrix program
+    subprocess.run(["python", "CreatingMatrix.py"])
+
+
+Execute()

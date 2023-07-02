@@ -76,13 +76,14 @@ def fillmatrix(matrix,setlist,N):
         matrix[matrix[0].index(set[1]+ (' ' * (N - len(set[1]))))][matrix[0].index(set[0]+ (' ' * (N - len(set[0]))))] = '1' + (' ' * (N - 1))
     return matrix
 
-def save_set(setlist,matrix):
+def save_set(setlist,orgnums,matrix):
     ''' Writes the set and matrix
     to a text file which will be used in later processes'''
     MySet = open("MySet","w")
     MySet.write('Your Set:'+'\n' + str(setlist) + '\n\n')
     MySet.close()
     MySet = open("MySet", "a")
+    MySet.write('Your sets universe:' + '\n' + str(orgnums) + '\n\n')
     MySet.write('Your sets matrix representation:' + '\n')
     for row in matrix:
         MySet.write(str((row)) + '\n')
@@ -96,6 +97,6 @@ def main():
     N = finding_longest_Str(orgnums)
     matrix = create_matrix(orgnums,N)
     filledmatrix = fillmatrix(matrix,setlist,N)
-    save_set(setlist,filledmatrix)
+    save_set(setlist,orgnums,filledmatrix)
 
 main()

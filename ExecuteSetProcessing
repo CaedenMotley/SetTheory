@@ -13,6 +13,8 @@ import subprocess
 def Execute():
     # runs the Creating Matrix program
     subprocess.run(["python", "CreatingMatrix.py"])
+    # runs the process which tests for set properties
+    subprocess.run(["python", "PropertyFinder.py"])
 
 
 Execute()
